@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<StyledLayerDescriptor version="1.0.0"
+    xsi:schemaLocation="http://www.opengis.net/sld StyledLayerDescriptor.xsd"
+    xmlns="http://www.opengis.net/sld" 
+    xmlns:ogc="http://www.opengis.net/ogc" 
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	
+  <NamedLayer>
+    <Name>cite:plzo_plz</Name>
+    <UserStyle>
+      <Title>Index Socio-Eco</Title>
+      <FeatureTypeStyle>
+        <Rule>
+	<Title>Null</Title>
+	<ogc:Filter>
+         <ogc:PropertyIsNull>
+           <ogc:PropertyName>index_socioec</ogc:PropertyName>
+           
+         </ogc:PropertyIsNull>
+       </ogc:Filter>
+          <PolygonSymbolizer>
+            <Fill>
+              <CssParameter name="fill">#ffffff</CssParameter>
+            </Fill>
+            <Stroke>
+              <CssParameter name="stroke">#000000</CssParameter>
+              <CssParameter name="stroke-width">0</CssParameter>
+            </Stroke>
+          </PolygonSymbolizer>
+        </Rule>
+		</FeatureTypeStyle> 
+ <FeatureTypeStyle>
+        <Rule>
+	<Title>&#60; 0.4</Title>
+	<ogc:Filter>
+         <ogc:PropertyIsGreaterThan>
+           <ogc:PropertyName>index_socioec</ogc:PropertyName>
+           <ogc:Literal>0</ogc:Literal>
+         </ogc:PropertyIsGreaterThan>
+       </ogc:Filter>
+          <PolygonSymbolizer>
+            <Fill>
+              <CssParameter name="fill">#E60000</CssParameter>
+            </Fill>
+            <Stroke>
+              <CssParameter name="stroke">#000000</CssParameter>
+              <CssParameter name="stroke-width">0</CssParameter>
+            </Stroke>
+          </PolygonSymbolizer>
+        </Rule>
+      </FeatureTypeStyle> 
+ <FeatureTypeStyle>
+        <Rule>
+	<Title>0.4-0.7</Title>
+	<ogc:Filter>
+         <ogc:PropertyIsGreaterThan>
+           <ogc:PropertyName>index_socioec</ogc:PropertyName>
+           <ogc:Literal>0.4</ogc:Literal>
+         </ogc:PropertyIsGreaterThan>
+       </ogc:Filter>
+          <PolygonSymbolizer>
+            <Fill>
+              <CssParameter name="fill">#FF9900</CssParameter>
+            </Fill>
+            <Stroke>
+              <CssParameter name="stroke">#000000</CssParameter>
+              <CssParameter name="stroke-width">0</CssParameter>
+            </Stroke>
+          </PolygonSymbolizer>
+        </Rule>
+      </FeatureTypeStyle> 
+ <FeatureTypeStyle>
+        <Rule>
+	<Title>0.7-0.8</Title>
+	<ogc:Filter>
+         <ogc:PropertyIsGreaterThan>
+           <ogc:PropertyName>index_socioec</ogc:PropertyName>
+           <ogc:Literal>0.7</ogc:Literal>
+         </ogc:PropertyIsGreaterThan>
+       </ogc:Filter>
+          <PolygonSymbolizer>
+            <Fill>
+              <CssParameter name="fill">#FFFF85</CssParameter>
+            </Fill>
+            <Stroke>
+              <CssParameter name="stroke">#000000</CssParameter>
+              <CssParameter name="stroke-width">0</CssParameter>
+            </Stroke>
+          </PolygonSymbolizer>
+        </Rule>
+      </FeatureTypeStyle> 
+ <FeatureTypeStyle>
+        <Rule>
+	<Title>0.8-0.9</Title>
+	<ogc:Filter>
+         <ogc:PropertyIsGreaterThan>
+           <ogc:PropertyName>index_socioec</ogc:PropertyName>
+           <ogc:Literal>0.8</ogc:Literal>
+         </ogc:PropertyIsGreaterThan>
+       </ogc:Filter>
+          <PolygonSymbolizer>
+            <Fill>
+              <CssParameter name="fill">#70B870</CssParameter>
+            </Fill>
+            <Stroke>
+              <CssParameter name="stroke">#000000</CssParameter>
+              <CssParameter name="stroke-width">0</CssParameter>
+            </Stroke>
+          </PolygonSymbolizer>
+        </Rule>
+      </FeatureTypeStyle> 
+ <FeatureTypeStyle>
+        <Rule>
+	<Title>&#62; 0.9</Title>
+	<ogc:Filter>
+         <ogc:PropertyIsGreaterThan>
+           <ogc:PropertyName>index_socioec</ogc:PropertyName>
+           <ogc:Literal>0.9</ogc:Literal>
+         </ogc:PropertyIsGreaterThan>
+       </ogc:Filter>
+          <PolygonSymbolizer>
+            <Fill>
+              <CssParameter name="fill">#197519</CssParameter>
+            </Fill>
+            <Stroke>
+              <CssParameter name="stroke">#000000</CssParameter>
+              <CssParameter name="stroke-width">0</CssParameter>
+            </Stroke>
+          </PolygonSymbolizer>
+        </Rule>
+      </FeatureTypeStyle>
+	</UserStyle>
+  </NamedLayer>
+</StyledLayerDescriptor>

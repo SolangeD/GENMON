@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<StyledLayerDescriptor version="1.0.0"
+    xsi:schemaLocation="http://www.opengis.net/sld StyledLayerDescriptor.xsd"
+    xmlns="http://www.opengis.net/sld" 
+    xmlns:ogc="http://www.opengis.net/ogc" 
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	
+  <NamedLayer>
+    <Name>cite:plzo_plz</Name>
+    <UserStyle>
+      <Title>Introgression</Title>
+      <FeatureTypeStyle>
+        <Rule>
+	<Title>No data</Title>
+	<ogc:Filter>
+         <ogc:PropertyIsNull>
+           <ogc:PropertyName>mean_introgr_lastgi</ogc:PropertyName>
+           
+         </ogc:PropertyIsNull>
+       </ogc:Filter>
+          <PolygonSymbolizer>
+            <Fill>
+              <CssParameter name="fill">#ffffff</CssParameter>
+            </Fill>
+            <Stroke>
+              <CssParameter name="stroke">#000000</CssParameter>
+              <CssParameter name="stroke-width">0</CssParameter>
+            </Stroke>
+          </PolygonSymbolizer>
+        </Rule>
+		</FeatureTypeStyle> 
+ <FeatureTypeStyle>
+        <Rule>
+	<Title>&#60; 0.02</Title>
+	<ogc:Filter>
+         <ogc:PropertyIsGreaterThan>
+           <ogc:PropertyName>mean_introgr_lastgi</ogc:PropertyName>
+           <ogc:Literal>-0.0001</ogc:Literal>
+         </ogc:PropertyIsGreaterThan>
+       </ogc:Filter>
+          <PolygonSymbolizer>
+            <Fill>
+              <CssParameter name="fill">#fdcc8a</CssParameter>
+            </Fill>
+            <Stroke>
+              <CssParameter name="stroke">#000000</CssParameter>
+              <CssParameter name="stroke-width">0</CssParameter>
+            </Stroke>
+          </PolygonSymbolizer>
+        </Rule>
+      </FeatureTypeStyle> 
+ <FeatureTypeStyle>
+        <Rule>
+	<Title>0.02-0.05</Title>
+	<ogc:Filter>
+         <ogc:PropertyIsGreaterThan>
+           <ogc:PropertyName>mean_introgr_lastgi</ogc:PropertyName>
+           <ogc:Literal>0.02</ogc:Literal>
+         </ogc:PropertyIsGreaterThan>
+       </ogc:Filter>
+          <PolygonSymbolizer>
+            <Fill>
+              <CssParameter name="fill">#fc8d59</CssParameter>
+            </Fill>
+            <Stroke>
+              <CssParameter name="stroke">#000000</CssParameter>
+              <CssParameter name="stroke-width">0</CssParameter>
+            </Stroke>
+          </PolygonSymbolizer>
+        </Rule>
+      </FeatureTypeStyle> 
+ <FeatureTypeStyle>
+        <Rule>
+	<Title>0.05-0.1</Title>
+	<ogc:Filter>
+         <ogc:PropertyIsGreaterThan>
+           <ogc:PropertyName>mean_introgr_lastgi</ogc:PropertyName>
+           <ogc:Literal>0.05</ogc:Literal>
+         </ogc:PropertyIsGreaterThan>
+       </ogc:Filter>
+          <PolygonSymbolizer>
+            <Fill>
+              <CssParameter name="fill">#e34a33</CssParameter>
+            </Fill>
+            <Stroke>
+              <CssParameter name="stroke">#000000</CssParameter>
+              <CssParameter name="stroke-width">0</CssParameter>
+            </Stroke>
+          </PolygonSymbolizer>
+        </Rule>
+      </FeatureTypeStyle> 
+ <FeatureTypeStyle>
+        <Rule>
+	<Title>&#62; 0.1</Title>
+	<ogc:Filter>
+         <ogc:PropertyIsGreaterThan>
+           <ogc:PropertyName>mean_introgr_lastgi</ogc:PropertyName>
+           <ogc:Literal>0.1</ogc:Literal>
+         </ogc:PropertyIsGreaterThan>
+       </ogc:Filter>
+          <PolygonSymbolizer>
+            <Fill>
+              <CssParameter name="fill">#b30000</CssParameter>
+            </Fill>
+            <Stroke>
+              <CssParameter name="stroke">#000000</CssParameter>
+              <CssParameter name="stroke-width">0</CssParameter>
+            </Stroke>
+          </PolygonSymbolizer>
+        </Rule>
+      </FeatureTypeStyle>
+	</UserStyle>
+  </NamedLayer>
+</StyledLayerDescriptor>

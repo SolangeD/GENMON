@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<StyledLayerDescriptor version="1.0.0"
+    xsi:schemaLocation="http://www.opengis.net/sld StyledLayerDescriptor.xsd"
+    xmlns="http://www.opengis.net/sld" 
+    xmlns:ogc="http://www.opengis.net/ogc" 
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	
+  <NamedLayer>
+    <Name>cite:plzo_plz</Name>
+    <UserStyle>
+      <Title>NumberIndividual</Title>
+      <FeatureTypeStyle>
+        <Rule>
+	<Title>No data</Title>
+	<ogc:Filter>
+         <ogc:PropertyIsNull>
+           <ogc:PropertyName>num_ind_lastgi</ogc:PropertyName>
+           
+         </ogc:PropertyIsNull>
+       </ogc:Filter>
+          <PolygonSymbolizer>
+            <Fill>
+              <CssParameter name="fill">#ffffff</CssParameter>
+            </Fill>
+            <Stroke>
+              <CssParameter name="stroke">#000000</CssParameter>
+              <CssParameter name="stroke-width">0</CssParameter>
+            </Stroke>
+          </PolygonSymbolizer>
+        </Rule>
+		</FeatureTypeStyle> 
+ <FeatureTypeStyle>
+        <Rule>
+	<Title>&#60; 50</Title>
+	<ogc:Filter>
+         <ogc:PropertyIsGreaterThan>
+           <ogc:PropertyName>num_ind_lastgi</ogc:PropertyName>
+           <ogc:Literal>0</ogc:Literal>
+         </ogc:PropertyIsGreaterThan>
+       </ogc:Filter>
+          <PolygonSymbolizer>
+            <Fill>
+              <CssParameter name="fill">#AEC9E1</CssParameter>
+            </Fill>
+            <Stroke>
+              <CssParameter name="stroke">#000000</CssParameter>
+              <CssParameter name="stroke-width">0</CssParameter>
+            </Stroke>
+          </PolygonSymbolizer>
+        </Rule>
+      </FeatureTypeStyle> 
+ <FeatureTypeStyle>
+        <Rule>
+	<Title>50-100</Title>
+	<ogc:Filter>
+         <ogc:PropertyIsGreaterThan>
+           <ogc:PropertyName>num_ind_lastgi</ogc:PropertyName>
+           <ogc:Literal>50</ogc:Literal>
+         </ogc:PropertyIsGreaterThan>
+       </ogc:Filter>
+          <PolygonSymbolizer>
+            <Fill>
+              <CssParameter name="fill">#61A0D8</CssParameter>
+            </Fill>
+            <Stroke>
+              <CssParameter name="stroke">#000000</CssParameter>
+              <CssParameter name="stroke-width">0</CssParameter>
+            </Stroke>
+          </PolygonSymbolizer>
+        </Rule>
+      </FeatureTypeStyle> 
+ <FeatureTypeStyle>
+        <Rule>
+	<Title>100-500</Title>
+	<ogc:Filter>
+         <ogc:PropertyIsGreaterThan>
+           <ogc:PropertyName>num_ind_lastgi</ogc:PropertyName>
+           <ogc:Literal>100</ogc:Literal>
+         </ogc:PropertyIsGreaterThan>
+       </ogc:Filter>
+          <PolygonSymbolizer>
+            <Fill>
+              <CssParameter name="fill">#0B5494</CssParameter>
+            </Fill>
+            <Stroke>
+              <CssParameter name="stroke">#000000</CssParameter>
+              <CssParameter name="stroke-width">0</CssParameter>
+            </Stroke>
+          </PolygonSymbolizer>
+        </Rule>
+      </FeatureTypeStyle> 
+ <FeatureTypeStyle>
+        <Rule>
+	<Title>&#62; 500</Title>
+	<ogc:Filter>
+         <ogc:PropertyIsGreaterThan>
+           <ogc:PropertyName>num_ind_lastgi</ogc:PropertyName>
+           <ogc:Literal>500</ogc:Literal>
+         </ogc:PropertyIsGreaterThan>
+       </ogc:Filter>
+          <PolygonSymbolizer>
+            <Fill>
+              <CssParameter name="fill">#002342</CssParameter>
+            </Fill>
+            <Stroke>
+              <CssParameter name="stroke">#000000</CssParameter>
+              <CssParameter name="stroke-width">0</CssParameter>
+            </Stroke>
+          </PolygonSymbolizer>
+        </Rule>
+      </FeatureTypeStyle>
+	</UserStyle>
+  </NamedLayer>
+</StyledLayerDescriptor>
