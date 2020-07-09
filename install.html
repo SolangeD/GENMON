@@ -7,30 +7,49 @@
   <title></title>
   <style type="text/css">code{white-space: pre;}</style>
   <style type="text/css">
+div.sourceCode { overflow-x: auto; }
 table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
   margin: 0; padding: 0; vertical-align: baseline; border: none; }
 table.sourceCode { width: 100%; line-height: 100%; }
 td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
 td.sourceCode { padding-left: 5px; }
-code > span.kw { color: #007020; font-weight: bold; }
-code > span.dt { color: #902000; }
-code > span.dv { color: #40a070; }
-code > span.bn { color: #40a070; }
-code > span.fl { color: #40a070; }
-code > span.ch { color: #4070a0; }
-code > span.st { color: #4070a0; }
-code > span.co { color: #60a0b0; font-style: italic; }
-code > span.ot { color: #007020; }
-code > span.al { color: #ff0000; font-weight: bold; }
-code > span.fu { color: #06287e; }
-code > span.er { color: #ff0000; font-weight: bold; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
   </style>
-  <link href="data:text/css,%2F%2A%20%20Feuille%20de%20style%20markdown%2Dpandoc%2Ecss%20%0A%20%20%20%20d%27am%C3%A9lioration%20du%20look%20des%20pages%20HTML%20g%C3%A9n%C3%A9r%C3%A9es%20par%20Pandoc%20%C3%A0%20partir%20de%20source%20Markdown%0A%20%20%20%20CC%20BY%2DSA%20%20Jean%2DDaniel%2DBonjour%40epfl%2Ech%2C%20EPFL%2DENAC%2DIT%20%28r%C3%A9f%C3%A9rence%20http%3A%2F%2Fenacit1%2Eepfl%2Ech%2Fmarkdown%2Dpandoc%2F%29%0A%20%20%20%20%0A%20%20%20%20M%2D%C3%A0%2Dj%20sur%3A%20%28w530%2Ft3500%29%20ENAC%2DIT%2Fdivers%2Fmarkdown%2Dpandoc%2F%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20root%40enacit1lin1%3A%2Fdata%2Fit1%2Fmarkdown%2Dpandoc%2F%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20enacit1%40enacit1vm1%3A%2Fdata%2Fweb%2Fenacit1%2Dsysadmin%2F%0A%2A%2F%0A%0A%0A%2F%2A%20Caract%C3%A9ristiques%20de%20base%20de%20l%27ensemble%20du%20BODY%20de%20la%20page%20%2A%2F%0Abody%20%7B%20margin%2Dleft%3A%20auto%3B%20margin%2Dright%3A%20auto%3B%20max%2Dwidth%3A%20900px%3B%20font%2Dfamily%3A%20serif%3B%20font%2Dsize%3A%2013px%3B%20color%3A%20%23444%3B%20%7D%20%20%20%2F%2A%20fonte%20serif%20%21%20%2A%2F%0A%40media%20print%20%7B%0A%20%20body%20%7B%20color%3A%20%23000%3B%20%7D%20%20%20%2F%2A%20plus%20fonc%C3%A9%20%C3%A0%20l%27impression%20%2A%2F%0A%7D%0A%0A%2F%2A%20Ci%2Ddessous%2C%20limiterait%20la%20largeur%20page%20au%20standard%20charte%20EPFL%20%2A%2F%0A%2F%2A%20%20body%20%7B%20width%3A%20980px%3B%20margin%2Dleft%3A%20auto%3B%20margin%2Dright%3A%20auto%3B%20margin%2Dtop%3A%200pt%3B%20%7D%20%20%2A%2F%0A%0A%0A%2F%2A%20Densification%20de%20l%27affichage%20%2A%2F%0Ap%20%20%20%20%20%20%7B%20margin%3A%204px%200%206px%200%3B%20%7D%20%20%20%2F%2A%20diminution%20espace%20entre%20paragraphe%20%2A%2F%0Aul%2C%20ol%20%7B%20margin%3A%202px%200%202px%200%3B%20padding%2Dleft%3A%2030px%3B%20%7D%20%20%20%2F%2A%20diminution%20espace%20au%2Ddessus%20listes%2C%20et%20espace%20sur%20la%20gauche%20%2A%2F%0A%0A%0A%0A%2F%2A%20Style%20des%20titres%20H1%20%C3%A0%20H6%20%2A%2F%0Ah1%2C%20h2%2C%20h3%2C%20h4%2C%20h5%2C%20h6%20%7B%20font%2Dfamily%3A%20Arial%2C%20Helvetica%2C%20sans%2Dserif%3B%20%7D%0Ah1%20%20%20%20%20%20%20%20%20%20%7B%20font%2Dsize%3A%2022px%3B%20margin%3A%2028px%200%2020px%200%3B%20border%3A%200%3B%20background%3A%20%23eee%3B%20padding%2Dleft%3A%206px%3B%20box%2Dshadow%3A%203px%203px%203px%20%23aaa%3B%20%7D%0Ah2%20%20%20%20%20%20%20%20%20%20%7B%20font%2Dsize%3A%2019px%3B%20margin%3A%2020px%200%2014px%200%3B%20border%2Dtop%3A%201px%20solid%20%23999%3B%20%7D%0Ah3%20%20%20%20%20%20%20%20%20%20%7B%20font%2Dsize%3A%2017px%3B%20margin%3A%2014px%200%2014px%200%3B%20%7D%0Ah4%2C%20h5%2C%20h6%20%20%7B%20font%2Dsize%3A%2015px%3B%20margin%3A%2014px%200%2014px%200%3B%20%7D%20%20%2F%2A%20sinon%20font%2Dsize%20plus%20petite%20que%20le%20texte%20%2F%2A%0A%0A%2F%2A%20%2D%20styles%20sp%C3%A9cifiques%20du%20bloc%20titre%2Fauteur%2Fdate%20du%20document%20%28bas%C3%A9%20H1%2FH2%2FH3%29%20%2A%2F%0Ah1%2Etitle%20%20%20%20%20%20%20%20%20%20%20%20%7B%20text%2Dalign%3A%20center%3B%20margin%3A%2010px%200%2010px%200%3B%20color%3A%20%23ddd%3B%20background%3A%20%23555%3B%20%7D%0Ah2%2Eauthor%2C%20h3%2Edate%20%20%7B%20text%2Dalign%3A%20center%3B%20margin%3A%200%3B%20border%3A%20none%3B%20font%2Dsize%3A%2016px%3B%20%7D%0A%0A%0A%2F%2A%20%2D%20styles%20des%20liens%20des%20titres%20H%2A%20et%20de%20la%20TOC%20%28en%20cas%20d%27activation%20TOC%20Pandoc%29%20%2A%2F%0Ah1%20a%2C%20h2%20a%2C%20h3%20a%2C%20h4%20a%2C%20h5%20a%2C%20h6%20a%20%20%7B%20color%3A%20%23444%3B%20text%2Ddecoration%3A%20none%3B%20%7D%0Ah1%20a%3Ahover%2C%20h2%20a%3Ahover%2C%20h3%20a%3Ahover%2C%20h4%20a%3Ahover%2C%20h5%20a%3Ahover%2C%20h6%20a%3Ahover%20%20%7B%20text%2Ddecoration%3A%20none%3B%20background%3A%20%23ccc%3B%20%7D%20%20%2F%2A%20survol%20lien%20%2A%2F%0Adiv%23TOC%20ul%20%20%7B%20list%2Dstyle%2Dtype%3A%20none%3B%20%7D%20%20%20%2F%2A%20enlever%20les%20puces%20dans%20TOC%20%2A%2F%0A%0A%0A%2F%2A%20%2D%20am%C3%A9lioration%20de%20la%20num%C3%A9rotation%20des%20titres%20H1%20%C3%A0%20H6%20ainsi%20que%20dans%20TOC%20%2A%2F%0A%2Eheader%2Dsection%2Dnumber%20%7B%20padding%2Dright%3A%208px%3B%20%7D%20%20%2F%2A%20d%C3%A9tacher%20les%20Nos%20de%20titres%20dans%20la%20page%20%2A%2F%0A%2Etoc%2Dsection%2Dnumber%20%20%20%20%7B%20padding%2Dright%3A%206px%3B%20%7D%20%20%2F%2A%20d%C3%A9tacher%20les%20Nos%20de%20titres%20dans%20la%20TOC%20%2A%2F%0Ah1%20%2Eheader%2Dsection%2Dnumber%3Aafter%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7B%20content%3A%20%22%2E%22%20%7D%20%20%20%2F%2A%20ajouter%20un%20point%20apr%C3%A8s%20le%20num%C3%A9ro%20des%20titres%20de%201er%20niveau%20%2A%2F%0Adiv%23TOC%20ul%20li%20%2Etoc%2Dsection%2Dnumber%3Aafter%20%20%20%20%20%20%20%7B%20content%3A%20%22%2E%22%20%7D%20%20%2F%2A%20ajouter%20dans%20la%20TOC%20un%20point%20apr%C3%A8s%20le%20num%C3%A9ro%20des%20titres%20de%201er%20niveau%20%2A%2F%0Adiv%23TOC%20ul%20li%20ul%20li%20%2Etoc%2Dsection%2Dnumber%3Aafter%20%7B%20content%3A%20%22%22%20%20%7D%20%20%2F%2A%20%2E%2E%2E%20mais%20pas%20apr%C3%A8s%20les%20num%C3%A9ros%20des%20titres%20de%20niveau%202%2C3%2C4%2C5%2C6%20%2A%2F%0A%0A%0A%2F%2A%20%2D%20suppression%20des%20num%C3%A9ros%20superflus%20dans%20la%20TOC%20d%27un%20document%20ePub%20%2A%2F%0Aol%2Etoc%20li%20%7B%20list%2Dstyle%2Dtype%3A%20none%3B%20%7D%0A%0A%0A%0A%2F%2A%20Am%C3%A9lioration%20des%20liens%20A%20%2A%2F%0Aa%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7B%20text%2Ddecoration%3A%20none%3B%20border%2Dbottom%3A%20none%3B%20color%3A%20%2326d%3B%20%7D%0Aa%3Ahover%2C%20%20a%3Ahover%20code%20%20%7B%20text%2Ddecoration%3A%20underline%3B%20background%3A%20%23def%3B%20%7D%0Aa%3Aactive%2C%20a%3Aactive%20code%20%7B%20background%3A%20%2348f%3B%20color%3A%20%23fff%3B%20%7D%0A%40media%20print%20%7B%0A%20%20a%20%7B%20color%3A%20%2304a%3B%20%7D%20%20%20%2F%2A%20plus%20fonc%C3%A9%20%C3%A0%20l%27impression%20%2A%2F%0A%7D%0A%0A%2F%2A%20%2D%20en%20cas%20d%27impression%20on%20affiche%20les%20URLs%20des%20liens%0A%20%20%20%20%20%20%20%2D%20sauf%20dans%20TOC%20et%20sur%20titres%20en%20cas%20de%20TOC%0A%20%20%20%20%20%20%20%2D%20ni%20dans%20les%20r%C3%A9f%C3%A9rences%20de%20notes%20de%20bas%20de%20page%20%20%20%2A%2F%0A%2F%2A%20%20%20note%3A%20je%20d%C3%A9sactive%20tout%20%C3%A7a%20le%2020%2E11%2E2013%20car%20%C3%A7a%20pollue%20les%20liens%20de%20mon%20support%20de%20cours%20Python%0A%40media%20print%20%7B%0A%20%20a%3Aafter%20%7B%20content%3A%20%22%20%28%22%20attr%28href%29%20%22%29%20%22%3B%20font%2Dsize%3A%200%2E8em%3B%20%7D%0A%20%20%0A%20%20div%23TOC%20a%3Aafter%20%20%20%20%20%20%20%20%20%20%20%20%7B%20content%3A%20%22%22%20%7D%0A%20%20h1%20a%3Aafter%2C%20h2%20a%3Aafter%2C%20h3%20a%3Aafter%2C%20h4%20a%3Aafter%2C%20h5%20a%3Aafter%2C%20h6%20a%3Aafter%20%7B%20content%3A%20%22%22%20%7D%0A%20%20a%2EfootnoteRef%3Aafter%20%20%20%20%20%20%20%20%7B%20content%3A%20%22%22%20%7D%0A%20%20div%2Efootnotes%20li%20a%3Aafter%20%20%20%7B%20content%3A%20%22%22%20%7D%0A%20%20div%2Eno%2Dprint%2Dlinks%20a%3Aafter%20%7B%20content%3A%20%22%22%20%7D%0A%7D%0A%2A%2F%0A%0A%0A%2F%2A%20Simplification%20des%20HR%20%2A%2F%0Ahr%20%7B%20height%3A%201px%3B%20border%3A%200%3B%20color%3A%20%23999%3B%20background%3A%20%23999%3B%20%7D%0A%0A%0A%2F%2A%20Style%20des%20TABLE%20%28si%20plac%C3%A9es%20dans%20%3CDIV%3E%20avec%20classe%20center%2Fborder%2Fshadow%20ci%2Ddessous%29%20%2A%2F%0Adiv%2Ecenter%20table%20%20%20%20%20%7B%20margin%2Dleft%3Aauto%3B%20margin%2Dright%3Aauto%3B%20%7D%0Adiv%2Eborder%20table%20%20%20%20%20%7B%20border%2Dcollapse%3A%20collapse%3B%20%7D%0Adiv%2Eborder%20table%20th%20%20%7B%20padding%3A%203px%3B%20border%3A%20solid%201px%20%23999%3B%20font%2Dweight%3A%20bold%3B%20background%3A%20%23eee%3B%20%7D%0Adiv%2Eborder%20table%20td%20%20%7B%20padding%3A%203px%3B%20border%3A%20solid%201px%20%23999%3B%20line%2Dheight%3A%20inherit%3B%20%7D%0Adiv%2Eshadow%20table%20%20%20%20%20%7B%20box%2Dshadow%3A%203px%203px%203px%20%23aaa%3B%20%7D%0Atr%3Ahover%20%20%20%20%20%20%7B%20background%3A%20%23fff8e8%3B%20%7D%20%2F%2A%20Couleur%20de%20fonds%20quand%20on%20survole%20une%20ligne%20de%20tableau%20%2A%2F%0Atable%20caption%20%7B%20caption%2Dside%3A%20bottom%3B%20margin%3A%208px%3B%20%7D%20%20%2F%2A%20sinon%20la%20l%C3%A9gende%20est%20au%2Ddessus%20du%20tableau%20%2A%2F%0A%0A%0A%2F%2A%20Am%C3%A9lioration%20des%20%22figures%22%20Pandoc%20%28qui%20sont%20des%20IMAGES%2Dparagraphes%29%20%2A%2F%0Adiv%2Efigure%20%20%20%20%20%20%20%20%20%20%20%7B%20text%2Dalign%3A%20center%3B%20%7D%20%20%2F%2A%20centrer%20la%20figure%20et%20sa%20l%C3%A9gende%20%2A%2F%0Adiv%2Efigure%20p%2Ecaption%20%7B%20margin%3A%208px%3B%20%7D%20%20%20%20%20%20%20%20%20%2F%2A%20d%C3%A9tacher%20la%20l%C3%A9gende%20de%20la%20figure%20%2A%2F%0Adiv%2Efigure%20img%20%20%20%20%20%20%20%7B%20box%2Dshadow%3A%203px%203px%203px%20%23aaa%3B%20%7D%0A%0A%0A%0A%2F%2A%20Am%C3%A9lioration%20CODE%20et%20PRE%20%2A%2F%0Acode%20%20%20%20%20%7B%20font%2Dfamily%3A%20monospace%3B%20font%2Dsize%3A%2011px%3B%20font%2Dweight%3A%20bold%3B%20color%3A%20%23559%3B%20background%3A%20%23f8f8ff%3B%20padding%2Dleft%3A%203px%3B%20padding%2Dright%3A%203px%3B%20%7D%0Apre%20%20%20%20%20%20%7B%20background%3A%20%23f8f8ff%3B%20border%3A%200px%20solid%20%23ddf%3B%20padding%3A%204px%204px%204px%206px%3B%20line%2Dheight%3A%2013px%3B%20border%2Dbottom%3A%203px%20solid%20%23fff%3B%20%7D%0Apre%20code%20%7B%20font%2Dsize%3A%2011px%3B%20font%2Dweight%3A%20normal%3B%20padding%2Dleft%3A%200%3B%20padding%2Dright%3A%200%3B%20%7D%0Acode%20i%20%20%20%7B%20font%2Dweight%3A%20normal%3B%20%7D%20%20%2F%2A%20pour%20code%20italique%20post%2Dprocess%C3%A9%20par%20mon%20post%2Dpandoc%2Epl%20%2A%2F%0A%0A%2F%2A%20classes%20de%20CODE%20sp%C3%A9cifiques%20enac%2Dit1%20%3A%20OUTtput%20de%20commande%2C%20SNIPsnap%20%2A%2F%0Apre%2Eout%20%20%20%20%20%20%20%7B%20background%3A%20%23fff%3B%20%20%20%20padding%3A%200%200%200%206px%3B%20%20%20margin%3A%200%200%200%2030px%3B%20border%2Dleft%3A%203px%20solid%20%23ccc%3B%20%7D%0Apre%2Eout%20code%20%20%7B%20background%3A%20%23fff%3B%20%20%20%20font%2Dstyle%3Aitalic%3B%20color%3A%20%23666%3B%20%7D%0Apre%2Esnip%20%20%20%20%20%20%7B%20background%3A%20%23fff8f0%3B%20padding%3A%200%200%201px%206px%3B%20margin%3A%200%200%200%2040px%3B%20border%2Dbottom%3A%203px%20solid%20%23fff%3B%20%7D%0Apre%2Esnip%20code%20%7B%20background%3A%20%23fff8f0%3B%20color%3A%20%23530%3B%20%7D%0A%2F%2A%20ainsi%20que%20d%C3%A9calage%20%C3%A0%20droite%20du%20code%20de%20classe%20BASH%20%2A%2F%0Apre%2Ebash%20%20%20%20%20%20%7B%20margin%3A%200%200%200%2024px%3B%20%7D%0A%0A%0A%2F%2A%20%2D%20et%20cosm%C3%A9tique%20en%20cas%20du%20coloration%20syntaxique%20Pandoc%20du%20code%20et%20avec%20num%C3%A9rotation%20de%20lignes%20%2A%2F%0Atr%2EsourceCode%3Ahover%20%7B%20background%3A%20none%3B%20%7D%20%20%2F%2A%20annuler%20effet%20de%20survol%20%2A%2F%0Atd%2ElineNumbers%20%20%20%20%20%20%7B%20padding%3A%200%202px%200%200%3B%20width%3A%2025px%3B%20color%3A%20%23bbbbbb%3B%20background%3A%20%23fafafa%3B%20border%2Dright%3A%201px%20solid%20%23aaa%3B%20%7D%0Atd%2EsourceCode%20%20%20%20%20%20%20%7B%20padding%3A%200%3B%20%7D%0Atd%2ElineNumbers%20pre%20%20%7B%20margin%3A%200%3B%20background%3A%20inherit%3B%20font%2Dsize%3A%208px%3B%20%7D%0Atd%2EsourceCode%20%20pre%20%20%7B%20margin%3A%200%3B%20padding%2Dleft%3A%2010px%3B%20%7D%0A%0A%0A%0A%2F%2A%20Am%C3%A9lioration%20des%20notes%20de%20bas%20de%20page%20Pandoc%20%2A%2F%0Adiv%2Efootnotes%20%20%20%20%20%20%7B%20font%2Dsize%3A%2011px%3B%20padding%2Dtop%3A%2050px%3B%20%7D%20%20%2F%2A%20plus%20petit%20et%20d%C3%A9tacher%20du%20document%20%2A%2F%0Adiv%2Efootnotes%20hr%20%20%20%7B%20width%3A%2020%25%3B%20margin%2Dleft%3A%200%3B%20text%2Dalign%3A%20left%3B%20%7D%20%20%2F%2A%20raccourcir%20s%C3%A9parateur%20%2A%2F%0Adiv%2Efootnotes%20ol%20p%20%7B%20margin%3A%200px%3B%20%7D%20%20%20%2F%2A%20interligne%20entre%20notes%20%2A%2F%0A%0A%0A%0A%2F%2A%20Bi%2Dcolonne%20JDB%20par%20%3CTABLE%3E%20%28n%27est%20effectif%20qu%27en%20cas%20de%20conversion%20Pandoc%20en%20HTML%20%21%29%20%2A%2F%0Atable%2Ebicol%20%20%20%20%20%7B%20width%3A%20100%25%3B%20padding%3A%200%3B%20%7D%0Atable%2Ebicol%20td%20%20%7B%20width%3A%2050%25%3B%20vertical%2Dalign%3Atop%3B%20padding%2Dright%3A%2010px%3B%20%7D%0Atd%2Eo%20%20%20%20%20%20%20%20%20%20%20%20%7B%20box%2Dshadow%3A%203px%203px%203px%20%23aaa%3B%20padding%2Dleft%3A%205px%3B%20%7D%0Atable%2Ebicol%20pre%20%7B%20margin%3A%200%3B%20%7D%0Atable%2Ebicol%20tr%3Ahover%20%7B%20background%3A%20none%3B%20%7D%20%20%2F%2A%20annuler%20effet%20de%20survol%20%2A%2F%0A%0A%0A%2F%2A%20Alternative%20JDB%20de%20bi%2Dcolonne%20par%20%3CDIV%3E%20%28g%3DGauche%2C%20d%3DDroite%2C%20f%3DFin%29%0A%20%20%20%28n%27est%20%C3%A9galement%20effectif%20qu%27en%20cas%20de%20conversion%20Pandoc%20en%20HTML%20%21%29%2A%2F%0Adiv%2Eg%20%20%20%7B%20float%3A%20left%3B%20width%3A%2048%25%3B%20margin%3A%208px%201%25%20%2010px%200px%3B%20border%3A%200px%20solid%20%23000%3B%20%7D%0Adiv%2Ed%20%20%20%7B%20float%3A%20left%3B%20width%3A%2049%25%3B%20margin%3A%208px%200px%2010px%200px%3B%20border%3A%200px%20solid%20%23000%3B%20%7D%0Adiv%2Ef%20%20%20%7B%20clear%3A%20both%3B%20%7D%0Adiv%20pre%20%7B%20margin%3A%200%3B%20%7D%20%20%20%2F%2A%20cosm%C3%A9tique%20%2A%2F%0A%2F%2A%20Variante%20bi%2Dcolonne%20ombr%C3%A9e%20%28o%3DOmbr%C3%A9e%29%20%2A%2F%0Adiv%2Ego%20%20%7B%20float%3A%20left%3B%20width%3A%2048%25%3B%20margin%3A%208px%201%25%20%2010px%200px%3B%20border%3A%201px%20solid%20%23ddd%3B%20padding%3A%200%204px%200%204px%3B%20box%2Dshadow%3A%203px%203px%203px%20%23aaa%3B%20%7D%0Adiv%2Edo%20%20%7B%20float%3A%20left%3B%20width%3A%2048%25%3B%20margin%3A%208px%200px%2010px%200px%3B%20border%3A%201px%20solid%20%23ddd%3B%20padding%3A%200%204px%200%204px%3B%20box%2Dshadow%3A%203px%203px%203px%20%23aaa%3B%20%7D%0A%0A%0A%2F%2A%20%20%2A%2F%0Amark%2C%20%2Eeit%5Fbg%5Fjaune3%20%7B%20background%3A%20%23ffc%3B%20%7D%0A" rel="stylesheet" type="text/css" />
+  <link href="data:text/css;charset=utf-8,%0A%0Abody%20%7B%20margin%2Dleft%3A%20auto%3B%20margin%2Dright%3A%20auto%3B%20max%2Dwidth%3A%20900px%3B%20font%2Dfamily%3A%20serif%3B%20font%2Dsize%3A%2013px%3B%20color%3A%20%23444%3B%20%7D%20%0A%40media%20print%20%7B%0Abody%20%7B%20color%3A%20%23000%3B%20%7D%20%0A%7D%0A%0A%0A%0Ap%20%7B%20margin%3A%204px%200%206px%200%3B%20%7D%20%0Aul%2C%20ol%20%7B%20margin%3A%202px%200%202px%200%3B%20padding%2Dleft%3A%2030px%3B%20%7D%20%0A%0Ah1%2C%20h2%2C%20h3%2C%20h4%2C%20h5%2C%20h6%20%7B%20font%2Dfamily%3A%20Arial%2C%20Helvetica%2C%20sans%2Dserif%3B%20%7D%0Ah1%20%7B%20font%2Dsize%3A%2022px%3B%20margin%3A%2028px%200%2020px%200%3B%20border%3A%200%3B%20background%3A%20%23eee%3B%20padding%2Dleft%3A%206px%3B%20box%2Dshadow%3A%203px%203px%203px%20%23aaa%3B%20%7D%0Ah2%20%7B%20font%2Dsize%3A%2019px%3B%20margin%3A%2020px%200%2014px%200%3B%20border%2Dtop%3A%201px%20solid%20%23999%3B%20%7D%0Ah3%20%7B%20font%2Dsize%3A%2017px%3B%20margin%3A%2014px%200%2014px%200%3B%20%7D%0Ah4%2C%20h5%2C%20h6%20%7B%20font%2Dsize%3A%2015px%3B%20margin%3A%2014px%200%2014px%200%3B%20%7D%20%0Ah1%2Etitle%20%7B%20text%2Dalign%3A%20center%3B%20margin%3A%2010px%200%2010px%200%3B%20color%3A%20%23ddd%3B%20background%3A%20%23555%3B%20%7D%0Ah2%2Eauthor%2C%20h3%2Edate%20%7B%20text%2Dalign%3A%20center%3B%20margin%3A%200%3B%20border%3A%20none%3B%20font%2Dsize%3A%2016px%3B%20%7D%0A%0Ah1%20a%2C%20h2%20a%2C%20h3%20a%2C%20h4%20a%2C%20h5%20a%2C%20h6%20a%20%7B%20color%3A%20%23444%3B%20text%2Ddecoration%3A%20none%3B%20%7D%0Ah1%20a%3Ahover%2C%20h2%20a%3Ahover%2C%20h3%20a%3Ahover%2C%20h4%20a%3Ahover%2C%20h5%20a%3Ahover%2C%20h6%20a%3Ahover%20%7B%20text%2Ddecoration%3A%20none%3B%20background%3A%20%23ccc%3B%20%7D%20%0Adiv%23TOC%20ul%20%7B%20list%2Dstyle%2Dtype%3A%20none%3B%20%7D%20%0A%0A%2Eheader%2Dsection%2Dnumber%20%7B%20padding%2Dright%3A%208px%3B%20%7D%20%0A%2Etoc%2Dsection%2Dnumber%20%7B%20padding%2Dright%3A%206px%3B%20%7D%20%0Ah1%20%2Eheader%2Dsection%2Dnumber%3Aafter%20%7B%20content%3A%20%22%2E%22%20%7D%20%0Adiv%23TOC%20ul%20li%20%2Etoc%2Dsection%2Dnumber%3Aafter%20%7B%20content%3A%20%22%2E%22%20%7D%20%0Adiv%23TOC%20ul%20li%20ul%20li%20%2Etoc%2Dsection%2Dnumber%3Aafter%20%7B%20content%3A%20%22%22%20%7D%20%0A%0Aol%2Etoc%20li%20%7B%20list%2Dstyle%2Dtype%3A%20none%3B%20%7D%0A%0Aa%20%7B%20text%2Ddecoration%3A%20none%3B%20border%2Dbottom%3A%20none%3B%20color%3A%20%2326d%3B%20%7D%0Aa%3Ahover%2C%20a%3Ahover%20code%20%7B%20text%2Ddecoration%3A%20underline%3B%20background%3A%20%23def%3B%20%7D%0Aa%3Aactive%2C%20a%3Aactive%20code%20%7B%20background%3A%20%2348f%3B%20color%3A%20%23fff%3B%20%7D%0A%40media%20print%20%7B%0Aa%20%7B%20color%3A%20%2304a%3B%20%7D%20%0A%7D%0A%0A%0A%0Ahr%20%7B%20height%3A%201px%3B%20border%3A%200%3B%20color%3A%20%23999%3B%20background%3A%20%23999%3B%20%7D%0A%0Adiv%2Ecenter%20table%20%7B%20margin%2Dleft%3Aauto%3B%20margin%2Dright%3Aauto%3B%20%7D%0Adiv%2Eborder%20table%20%7B%20border%2Dcollapse%3A%20collapse%3B%20%7D%0Adiv%2Eborder%20table%20th%20%7B%20padding%3A%203px%3B%20border%3A%20solid%201px%20%23999%3B%20font%2Dweight%3A%20bold%3B%20background%3A%20%23eee%3B%20%7D%0Adiv%2Eborder%20table%20td%20%7B%20padding%3A%203px%3B%20border%3A%20solid%201px%20%23999%3B%20line%2Dheight%3A%20inherit%3B%20%7D%0Adiv%2Eshadow%20table%20%7B%20box%2Dshadow%3A%203px%203px%203px%20%23aaa%3B%20%7D%0Atr%3Ahover%20%7B%20background%3A%20%23fff8e8%3B%20%7D%20%0Atable%20caption%20%7B%20caption%2Dside%3A%20bottom%3B%20margin%3A%208px%3B%20%7D%20%0A%0Adiv%2Efigure%20%7B%20text%2Dalign%3A%20center%3B%20%7D%20%0Adiv%2Efigure%20p%2Ecaption%20%7B%20margin%3A%208px%3B%20%7D%20%0Adiv%2Efigure%20img%20%7B%20box%2Dshadow%3A%203px%203px%203px%20%23aaa%3B%20%7D%0A%0Acode%20%7B%20font%2Dfamily%3A%20monospace%3B%20font%2Dsize%3A%2011px%3B%20font%2Dweight%3A%20bold%3B%20color%3A%20%23559%3B%20background%3A%20%23f8f8ff%3B%20padding%2Dleft%3A%203px%3B%20padding%2Dright%3A%203px%3B%20%7D%0Apre%20%7B%20background%3A%20%23f8f8ff%3B%20border%3A%200px%20solid%20%23ddf%3B%20padding%3A%204px%204px%204px%206px%3B%20line%2Dheight%3A%2013px%3B%20border%2Dbottom%3A%203px%20solid%20%23fff%3B%20%7D%0Apre%20code%20%7B%20font%2Dsize%3A%2011px%3B%20font%2Dweight%3A%20normal%3B%20padding%2Dleft%3A%200%3B%20padding%2Dright%3A%200%3B%20%7D%0Acode%20i%20%7B%20font%2Dweight%3A%20normal%3B%20%7D%20%0A%0Apre%2Eout%20%7B%20background%3A%20%23fff%3B%20padding%3A%200%200%200%206px%3B%20margin%3A%200%200%200%2030px%3B%20border%2Dleft%3A%203px%20solid%20%23ccc%3B%20%7D%0Apre%2Eout%20code%20%7B%20background%3A%20%23fff%3B%20font%2Dstyle%3Aitalic%3B%20color%3A%20%23666%3B%20%7D%0Apre%2Esnip%20%7B%20background%3A%20%23fff8f0%3B%20padding%3A%200%200%201px%206px%3B%20margin%3A%200%200%200%2040px%3B%20border%2Dbottom%3A%203px%20solid%20%23fff%3B%20%7D%0Apre%2Esnip%20code%20%7B%20background%3A%20%23fff8f0%3B%20color%3A%20%23530%3B%20%7D%0A%0Apre%2Ebash%20%7B%20margin%3A%200%200%200%2024px%3B%20%7D%0A%0Atr%2EsourceCode%3Ahover%20%7B%20background%3A%20none%3B%20%7D%20%0Atd%2ElineNumbers%20%7B%20padding%3A%200%202px%200%200%3B%20width%3A%2025px%3B%20color%3A%20%23bbbbbb%3B%20background%3A%20%23fafafa%3B%20border%2Dright%3A%201px%20solid%20%23aaa%3B%20%7D%0Atd%2EsourceCode%20%7B%20padding%3A%200%3B%20%7D%0Atd%2ElineNumbers%20pre%20%7B%20margin%3A%200%3B%20background%3A%20inherit%3B%20font%2Dsize%3A%208px%3B%20%7D%0Atd%2EsourceCode%20pre%20%7B%20margin%3A%200%3B%20padding%2Dleft%3A%2010px%3B%20%7D%0A%0Adiv%2Efootnotes%20%7B%20font%2Dsize%3A%2011px%3B%20padding%2Dtop%3A%2050px%3B%20%7D%20%0Adiv%2Efootnotes%20hr%20%7B%20width%3A%2020%25%3B%20margin%2Dleft%3A%200%3B%20text%2Dalign%3A%20left%3B%20%7D%20%0Adiv%2Efootnotes%20ol%20p%20%7B%20margin%3A%200px%3B%20%7D%20%0A%0Atable%2Ebicol%20%7B%20width%3A%20100%25%3B%20padding%3A%200%3B%20%7D%0Atable%2Ebicol%20td%20%7B%20width%3A%2050%25%3B%20vertical%2Dalign%3Atop%3B%20padding%2Dright%3A%2010px%3B%20%7D%0Atd%2Eo%20%7B%20box%2Dshadow%3A%203px%203px%203px%20%23aaa%3B%20padding%2Dleft%3A%205px%3B%20%7D%0Atable%2Ebicol%20pre%20%7B%20margin%3A%200%3B%20%7D%0Atable%2Ebicol%20tr%3Ahover%20%7B%20background%3A%20none%3B%20%7D%20%0A%0Adiv%2Eg%20%7B%20float%3A%20left%3B%20width%3A%2048%25%3B%20margin%3A%208px%201%25%2010px%200px%3B%20border%3A%200px%20solid%20%23000%3B%20%7D%0Adiv%2Ed%20%7B%20float%3A%20left%3B%20width%3A%2049%25%3B%20margin%3A%208px%200px%2010px%200px%3B%20border%3A%200px%20solid%20%23000%3B%20%7D%0Adiv%2Ef%20%7B%20clear%3A%20both%3B%20%7D%0Adiv%20pre%20%7B%20margin%3A%200%3B%20%7D%20%0A%0Adiv%2Ego%20%7B%20float%3A%20left%3B%20width%3A%2048%25%3B%20margin%3A%208px%201%25%2010px%200px%3B%20border%3A%201px%20solid%20%23ddd%3B%20padding%3A%200%204px%200%204px%3B%20box%2Dshadow%3A%203px%203px%203px%20%23aaa%3B%20%7D%0Adiv%2Edo%20%7B%20float%3A%20left%3B%20width%3A%2048%25%3B%20margin%3A%208px%200px%2010px%200px%3B%20border%3A%201px%20solid%20%23ddd%3B%20padding%3A%200%204px%200%204px%3B%20box%2Dshadow%3A%203px%203px%203px%20%23aaa%3B%20%7D%0A%0Amark%2C%20%2Eeit%5Fbg%5Fjaune3%20%7B%20background%3A%20%23ffc%3B%20%7D%0A" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="TOC">
 <ul>
 <li><a href="#install-genmon-on-a-new-server">INSTALL GENMON ON A NEW SERVER</a><ul>
+<li><a href="#important-note">Important note</a></li>
 <li><a href="#os-install">OS Install</a></li>
 <li><a href="#server-basics">Server Basics</a></li>
 <li><a href="#firewall">Firewall</a></li>
@@ -43,165 +62,257 @@ code > span.er { color: #ff0000; font-weight: bold; }
 </ul></li>
 </ul>
 </div>
-<h1 id="install-genmon-on-a-new-server"><a href="#install-genmon-on-a-new-server">INSTALL GENMON ON A NEW SERVER</a></h1>
-<h2 id="os-install"><a href="#os-install">OS Install</a></h2>
+<h1 id="install-genmon-on-a-new-server">INSTALL GENMON ON A NEW SERVER</h1>
+<h2 id="important-note">Important note</h2>
+<p>This installation procedure has been written in 2016 and uses version of software and packages that are now (2020) outdated. Most of the GenMon process will work with updated packages, but some parts (especially in the PopRep code and the maps using GeoServer) need an update to comply with the current version of the packages.</p>
+<h2 id="os-install">OS Install</h2>
 <pre class="snip"><code>The GENMON plateform is designed to work on a linux distribution system. Here we used Ubuntu.
 We describe the procedure to install all dependencies from scratch (includes poprep installation)</code></pre>
-<h2 id="server-basics"><a href="#server-basics">Server Basics</a></h2>
-<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">sudo</span> apt-get install vim 
-<span class="kw">sudo</span> apt-get install build-essential</code></pre>
-<h2 id="firewall"><a href="#firewall">Firewall</a></h2>
+<h2 id="server-basics">Server Basics</h2>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">sudo</span> apt-get install vim 
+<span class="fu">sudo</span> apt-get install build-essential</code></pre></div>
+<h2 id="firewall">Firewall</h2>
 <pre class="snip"><code>We let you decide which port you want to open. We recommend to open port 80 (used by apache) and 8080 (used by geoserver, though you can also use a proxi).
 Use for example following commands</code></pre>
-<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">sudo</span> ufw disable
-<span class="kw">sudo</span> ufw --force reset
-<span class="kw">sudo</span> ufw default deny incoming
-<span class="kw">sudo</span> ufw default allow outgoing
-<span class="kw">sudo</span> ufw allow proto tcp from any to any port 80
-<span class="kw">sudo</span> ufw allow proto tcp from any to any port 8080
-<span class="kw">sudo</span> ufw --force enable
-<span class="kw">sudo</span> ufw status</code></pre>
-<h2 id="install-postgres-and-postgis-needed-for-poprep-and-genmon"><a href="#install-postgres-and-postgis-needed-for-poprep-and-genmon">Install postgres and postgis (needed for PopRep and GENMON)</a></h2>
-<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">sudo</span> apt-get install postgresql-9.3-postgis-2.1 <span class="co">#choose the current postgresql/postgis version. These are the one we teste</span>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">sudo</span> ufw disable
+<span class="fu">sudo</span> ufw --force reset
+<span class="fu">sudo</span> ufw default deny incoming
+<span class="fu">sudo</span> ufw default allow outgoing
+<span class="fu">sudo</span> ufw allow proto tcp from any to any port 80
+<span class="fu">sudo</span> ufw allow proto tcp from any to any port 8080
+<span class="fu">sudo</span> ufw --force enable
+<span class="fu">sudo</span> ufw status</code></pre></div>
+<h2 id="install-postgres-and-postgis-needed-for-poprep-and-genmon">Install postgres and postgis (needed for PopRep and GENMON)</h2>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">sudo</span> apt-get install postgresql-9.3-postgis-2.1 <span class="co">#choose the current postgresql/postgis version. These are the one we tested</span>
 <span class="co">#import DB</span>
-<span class="kw">sudo</span> -i -u postgres
-<span class="kw">createuser</span> -s -P geome_admin </code></pre>
+<span class="fu">sudo</span> -i -u postgres
+<span class="ex">createuser</span> -s -P geome_admin </code></pre></div>
 <pre class="snip"><code>type a password. In the code it is assumed that you put the password &quot;geome&quot;</code></pre>
-<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">createdb</span> -O geome_admin GenMon_CH
-<span class="kw">psql</span> -d GenMon_CH -c <span class="st">&quot;CREATE EXTENSION postgis;&quot;</span> </code></pre>
-<pre class="snip"><code>Download the empty_GenMon_DB.sql on your machine, from GitHub</code></pre>
-<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">cd</span> /to/the/directory/where/you/saved/your/empty_GenMon_DB/file <span class="co">#where the backup was sent</span>
-<span class="kw">psql</span> GenMon_CH <span class="kw">&lt;</span> empty_GenMon_DB.sql</code></pre>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">createdb</span> -O geome_admin GenMon_CH
+<span class="ex">psql</span> -d GenMon_CH -c <span class="st">&quot;CREATE EXTENSION postgis;&quot;</span> </code></pre></div>
+<pre class="snip"><code>Download the empty_GenMon_DB.zip on your machine, from GitHub and unzip it to retrieve the empty_GenMon_DB.sql</code></pre>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="bu">cd</span> /to/the/directory/where/you/saved/your/empty_GenMon_DB/file <span class="co">#where the backup was sent</span>
+<span class="ex">psql</span> GenMon_CH <span class="op">&lt;</span> empty_GenMon_DB.sql</code></pre></div>
 <pre class="snip"><code>Import in Geoserver 
 * Connect to lasigvm2.epfl.ch:8080/geoserver with admin account
 * Create store GenMon (connexion postgis) and
 * Add postgis connection =&gt; Name: GenMon, Workspace: cite, Database: GenMon_CH, user: geome_admin, pwd..., expose primary key
 * Publish plzo_plz layer =&gt; Name: plzo_plz, EPSG:3857, expose primary key, bounds from native bounds</code></pre>
-<h2 id="install-php-needed-for-genmon"><a href="#install-php-needed-for-genmon">Install PHP (needed for GENMON)</a></h2>
-<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">sudo</span> apt-get install php5-pgsql
-<span class="kw">cd</span> /etc/php5/apache2
-<span class="kw">vim</span> php.ini</code></pre>
+<h2 id="install-php-needed-for-genmon">Install PHP (needed for GENMON)</h2>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">sudo</span> apt-get install php5-pgsql
+<span class="bu">cd</span> /etc/php5/apache2
+<span class="ex">vim</span> php.ini</code></pre></div>
 <pre class="snip"><code>change some default parameters:
 upload_max_filesize = 100M #otherwise cannot upload large pedigree file
-max_post_size = 100M #seems the files take space in the post variable
+post_max_size = 100M #seems the files take space in the post variable
 max_execution_time = 10000 #maybe a bit high since all SQL command and exec are not taken into account
 memory_limit = 1280M #sometimes problem when copying the whole datatable to the file</code></pre>
-<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">sudo</span> service apache2 restart</code></pre>
-<h2 id="install-geoserver-needed-for-genmon"><a href="#install-geoserver-needed-for-genmon">Install GeoServer (needed for GENMON)</a></h2>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">sudo</span> service apache2 restart</code></pre></div>
+<h2 id="install-geoserver-needed-for-genmon">Install GeoServer (needed for GENMON)</h2>
 <pre class="snip"><code>Download GeoServer from http://sourceforge.net/projects/geoserver/</code></pre>
-<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">sudo</span> unzip geoserver-2.8.0-war.zip
-<span class="kw">sudo</span> apt-get install tomcat7
-<span class="kw">sudo</span> cp geoserver.war /var/lib/tomcat7/webapps</code></pre>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">sudo</span> unzip geoserver-2.8.0-war.zip
+<span class="fu">sudo</span> apt-get install tomcat7
+<span class="fu">sudo</span> cp geoserver.war /var/lib/tomcat7/webapps</code></pre></div>
 <pre class="snip"><code>Check url: yourmachineaddress:8080/geoserver
 This only works if port 8080 is open</code></pre>
-<h2 id="install-the-genmon-code"><a href="#install-the-genmon-code">Install the GENMON code</a></h2>
-<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">cd</span> /var 
-<span class="kw">cd</span> /var/www/html
-<span class="kw">sudo</span> mkdir genmon-ch <span class="co">#where genmon-ch will be saved -&gt; url: yourmachineaddress/genmon-ch</span></code></pre>
+<h2 id="install-the-genmon-code">Install the GENMON code</h2>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="bu">cd</span> /var 
+<span class="bu">cd</span> /var/www/html
+<span class="fu">sudo</span> mkdir genmon-ch <span class="co">#where genmon-ch will be saved -&gt; url: yourmachineaddress/genmon-ch</span></code></pre></div>
 <pre class="snip"><code>* transfer the code from GitHub in  /var/www/html/genmon-ch
 * download openlayers 2 library and place it in /var/www/html/genmon-ch/ol
 * download flot library and place it in /var/www/html/genmon-ch/flot
 * download PHP_Mailer and place it in /var/www/html/genmon-ch/membres/PHP_Mailer2.0.5</code></pre>
-<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">sudo</span> su
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">sudo</span> su
 <span class="co">#change the base url. The code assumes you run on localhost. Might want to change it to your real machine address. If so, run:</span>
-<span class="kw">grep</span> -R <span class="st">'localhost'</span> <span class="kw">|</span> <span class="kw">xargs</span> sed -i <span class="st">'s/localhost/yourmachineaddress/g'</span>  
-<span class="kw">exit</span>
+<span class="fu">grep</span> -R <span class="st">'localhost'</span> <span class="kw">|</span> <span class="fu">xargs</span> sed -i <span class="st">'s/localhost/yourmachineaddress/g'</span>  
+<span class="bu">exit</span>
 <span class="co"># change right of the www-data folder</span>
-<span class="kw">cd</span> /var
-<span class="kw">sudo</span> chown -R www-data: www</code></pre>
+<span class="bu">cd</span> /var
+<span class="fu">sudo</span> chown -R www-data: www</code></pre></div>
 <pre class="snip"><code>* If you entered a different password than &quot;geome&quot; for your postgres user, change it in the connectDataBase.php
 * Change email details in ../membres/ForMail.php
 Test: yourmachineaddress/genmon-ch =&gt; ok</code></pre>
-<h2 id="configure-a-proxy-needed-for-genmon.-skip-this-if-you-opened-the-8080-port"><a href="#configure-a-proxy-needed-for-genmon.-skip-this-if-you-opened-the-8080-port">Configure a proxy (needed for GENMON. Skip this if you opened the 8080 port)</a></h2>
-<pre class="sourceCode bash"><code class="sourceCode bash"><span class="co"># Proxy and image map</span>
-<span class="kw">sudo</span> a2enmod cgi
-<span class="kw">sudo</span> service apache2 restart <span class="co">#still need to check that</span>
-<span class="kw">sudo</span> vim /etc/apache2/mods-enabled/mime.conf</code></pre>
+<h2 id="configure-a-proxy-needed-for-genmon.-skip-this-if-you-opened-the-8080-port">Configure a proxy (needed for GENMON. Skip this if you opened the 8080 port)</h2>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="co"># Proxy and image map</span>
+<span class="fu">sudo</span> a2enmod cgi
+<span class="fu">sudo</span> service apache2 restart <span class="co">#still need to check that</span>
+<span class="fu">sudo</span> vim /etc/apache2/mods-enabled/mime.conf</code></pre></div>
 <pre class="snip"><code>AddType image/gif .gif #To add, otherwise problem with Google chrome browser</code></pre>
-<h2 id="install-poprep"><a href="#install-poprep">Install PopRep</a></h2>
+<h2 id="install-poprep">Install PopRep</h2>
 <pre class="snip"><code>Note: the poprep code will be run from a web-portal. Therefore, we here show the methodology to use PopRep with the &quot;www-data&quot; user </code></pre>
-<pre class="sourceCode bash"><code class="sourceCode bash"><span class="co"># Install all modules needed by PopRep</span>
-<span class="kw">sudo</span> apt-get install texlive-full
-<span class="kw">sudo</span> apt-get install texinfo  
-<span class="kw">sudo</span> vim /etc/papersize <span class="co">#change the default paper size in latex</span></code></pre>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="co"># Install all modules needed by PopRep</span>
+<span class="fu">sudo</span> apt-get install texlive-full
+<span class="fu">sudo</span> apt-get install texinfo  
+<span class="fu">sudo</span> vim /etc/papersize <span class="co">#change the default paper size in latex</span></code></pre></div>
 <pre class="snip"><code>a4 (instead of letter; + Esc + ZZ (to save))</code></pre>
-<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">sudo</span> paperconfig -p a4
-<span class="kw">sudo</span> apt-get install gnuplot
-<span class="kw">sudo</span> apt-get install pdftk
-<span class="kw">sudo</span> apt-get install zip
-<span class="kw">sudo</span> apt-get install unzip
-<span class="kw">sudo</span> apt-get install gfrotran
-<span class="kw">sudo</span> apt-get install transfig
-<span class="kw">sudo</span> apt-get install xinetd</code></pre>
-<pre class="sourceCode bash"><code class="sourceCode bash"><span class="co"># prepare folder and copy code</span>
-<span class="kw">cd</span> /home
-<span class="kw">sudo</span> mkdir popreport
-<span class="kw">cd</span> popreport
-<span class="kw">sudo</span> mkdir production
-<span class="kw">sudo</span> chmod 777 production</code></pre>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">sudo</span> paperconfig -p a4
+<span class="fu">sudo</span> apt-get install gnuplot
+<span class="fu">sudo</span> apt-get install pdftk
+<span class="fu">sudo</span> apt-get install zip
+<span class="fu">sudo</span> apt-get install unzip
+<span class="fu">sudo</span> apt-get install gfrotran
+<span class="fu">sudo</span> apt-get install transfig
+<span class="fu">sudo</span> apt-get install xinetd</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="co"># prepare folder and copy code</span>
+<span class="bu">cd</span> /home
+<span class="fu">sudo</span> mkdir popreport
+<span class="bu">cd</span> popreport
+<span class="fu">sudo</span> mkdir production
+<span class="fu">sudo</span> chmod 777 production</code></pre></div>
 <pre class="snip"><code>The poprep code is somewhat difficult to access. You find a version in the QS@breeding virtual machine. http://www.qs-at-breeding.net/
-Copy apiis folder in production folder </code></pre>
-<pre class="sourceCode bash"><code class="sourceCode bash"><span class="co"># install perl package -&gt; run perl script from poprep</span>
-<span class="kw">cd</span> /home/popreport/production/apiis/bin
-<span class="kw">sudo</span> chmod +x apiis-test-dependencies
-<span class="kw">sudo</span> ./apiis-test-dependencies -i -d</code></pre>
-<pre class="sourceCode bash"><code class="sourceCode bash"><span class="co"># prepare folder with rights for www-data user</span>
-<span class="kw">cd</span> /var/lib/postgresql
-<span class="kw">sudo</span> mkdir incoming
-<span class="kw">sudo</span> mkdir done
-<span class="kw">sudo</span> mkdir projects
-<span class="kw">sudo</span> chown -R www-data: incoming
-<span class="kw">sudo</span> chown -R www-data: projects</code></pre>
-<pre class="sourceCode bash"><code class="sourceCode bash"><span class="co"># Change permission in the /var/log/popreport.log</span>
-<span class="kw">cd</span> /var/log/
-<span class="kw">sudo</span> vim popreport.log <span class="co"># and save your file</span>
-<span class="kw">sudo</span> chown www-data: popreport.log</code></pre>
-<pre class="sourceCode bash"><code class="sourceCode bash"><span class="co"># define enviro variable for apache, root and non-root user (change the user-name by your chosen user-name)</span>
+Copy apiis folder in production folder 
+Some files need to be changed to accept new parameters required for GENMON
+* inbreeding_report
+
+At the end of the script, before the graph Log(1-inbreeding) is plotted, insert:
+
+        my $sql_solange = &quot;create table tmp2_ne (method text, ne int, description text)&quot;;
+        my $sql_solange2 = &quot;insert into tmp2_ne (method, ne, description) values ('Ne_DeltaFg', $f_ne, ' '), ('Ne_Deltafg', $add_ne, ' ')&quot;;
+        my $sql_refs1=$dbh-&gt;prepare($sql_solange);
+        $sql_refs1-&gt;execute();
+        $sql_refs1-&gt;finish();
+        my $sql_refs2=$dbh-&gt;prepare($sql_solange2);
+        $sql_refs2-&gt;execute();
+        $sql_refs2-&gt;finish();
+        $dbh-&gt;commit;
+
+* run_popreport_file
+
+Right after the project name is created (PROJ=`$BINDIR/mk_rand_string`), insert:
+
+    cat ~/.pgpass | sed 's/PPP_[a-zA-Z0-9]*:/'${PROJ}':/' &gt;~/.pgpass-test &amp;&amp; mv ~/.pgpass-test ~/.pgpass #EG: not this line
+    chmod 0600 ~/.pgpass #EG: not this line
+    
+When the database is created, add the w option
+
+    createdb -U apiis_admin -E utf-8 -w $PROJ &gt;&gt;$LOG 2&gt;&amp;1 
+    
+When data is entered into the database, add the -U flag and specify user apiis_admin
+
+    psql -U apiis_admin -q -f ${PROJ_DIR}/${PROJ}.dump $PROJ &gt;&gt;$LOG 2&gt;&amp;1 #EG: pas -U
+
+Comment the line  rm -rf $PROJ_DIR 
+
+    # rm -rf $PROJ_DIR 
+
+Comment the line cat ~/.apiisrc | sed -e &quot;/${PROJ}/d&quot; &gt;~/.apiisrc-$PROJ &amp;&amp; mv ~/.apiisrc-$PROJ ~/.apiisrc
+
+    #cat ~/.apiisrc | sed -e &quot;/${PROJ}/d&quot; &gt;~/.apiisrc-$PROJ &amp;&amp; mv ~/.apiisrc-$PROJ ~/.apiisrc
+
+* handle_pedi_file
+
+After  the line  my ( @in_arr, @in_desc ); change the 2 following lines with:
+
+    @in_desc = (qw/animal sire dam birthdate sex plz introgression inb_gen cryo/);
+    @in_arr = split /\|/, $line, 9; #EG: @in_arr = split /\|/, $line;
+
+5 lines below, instead of the &quot;for $i ( 0 .. 4 ) {&quot;, put
+
+    for $i ( 0 .. 8 ) { #EG: 0..4
+    
+After the if block if ( $i == 3 ) { # birthdate can be empty...} add
+
+    if ( $i == 5 || $i == 6 || $i == 7 || $i == 8) { #EG: not this if
+        $in_arr[$i] = '-9999';
+        next COL;
+    }
+    
+A few lines below, in the else clause, change the next statement to
+
+     next COL if ($i == 3 || $i == 5 || $i == 6 || $i == 7 || $i == 8); #EG: next COL if $i==3; 
+     
+At the variable definition my ( @sth2_db_animals, @sth2_db_sires, @sth2_db_dams, @sth2_bdt, @sth2_db_sex); Add the variables
+
+    my ( @sth2_db_animals, @sth2_db_sires, @sth2_db_dams, @sth2_bdt, @sth2_db_sex, @sth2_plz, @sth2_introgression, @sth2_inb_gen, @sth2_cryo);
+        
+A few lines below, after the push @sth2_db_sex, $db_sex_of{ $pedref-&gt;{$key}[3] }; add the following lines: 
+
+    push @sth2_plz,    $pedref-&gt;{$key}[4]; 
+    push @sth2_introgression,    $pedref-&gt;{$key}[5]; 
+    push @sth2_inb_gen,    $pedref-&gt;{$key}[6]; 
+    push @sth2_cryo,    $pedref-&gt;{$key}[7]; 
+    
+A few lines below, afther the  $sth2-&gt;bind_param_array( 5, \@sth2_db_sex ); add the following lines: 
+
+    $sth2-&gt;bind_param_array( 6, \@sth2_plz ); 
+    $sth2-&gt;bind_param_array( 7, \@sth2_introgression ); 
+    $sth2-&gt;bind_param_array( 8, \@sth2_inb_gen ); 
+    $sth2-&gt;bind_param_array( 9, \@sth2_cryo );
+    $sth2-&gt;bind_param_array( 10, $db_breed ); 
+
+
+After &quot;$pedref-&gt;{$animal}[3] = $arr_ref-&gt;[4];    # sex&quot;, instead of the &quot;$pedref-&gt;{$animal}[5] = 0;     # clean flag&quot;, add:
+
+    $pedref-&gt;{$animal}[4] = $arr_ref-&gt;[5]; 
+    $pedref-&gt;{$animal}[5] = $arr_ref-&gt;[6];
+    $pedref-&gt;{$animal}[6] = $arr_ref-&gt;[7];
+    $pedref-&gt;{$animal}[7] = $arr_ref-&gt;[8];
+        
+
+
+</code></pre>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="co"># install perl package -&gt; run perl script from poprep</span>
+<span class="bu">cd</span> /home/popreport/production/apiis/bin
+<span class="fu">sudo</span> chmod +x apiis-test-dependencies
+<span class="fu">sudo</span> ./apiis-test-dependencies -i -d</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="co"># prepare folder with rights for www-data user</span>
+<span class="bu">cd</span> /var/lib/postgresql
+<span class="fu">sudo</span> mkdir incoming
+<span class="fu">sudo</span> mkdir done
+<span class="fu">sudo</span> mkdir projects
+<span class="fu">sudo</span> chown -R www-data: incoming
+<span class="fu">sudo</span> chown -R www-data: projects</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="co"># Change permission in the /var/log/popreport.log</span>
+<span class="bu">cd</span> /var/log/
+<span class="fu">sudo</span> vim popreport.log <span class="co"># and save your file</span>
+<span class="fu">sudo</span> chown www-data: popreport.log</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="co"># define enviro variable for apache, root and non-root user (change the user-name by your chosen user-name)</span>
 <span class="co"># Not sure if still necessary</span>
-<span class="kw">sudo</span> vim /etc/apache2/envvars</code></pre>
+<span class="fu">sudo</span> vim /etc/apache2/envvars</code></pre></div>
 <pre class="snip"><code>export APIIS_HOME=/home/popreport/production/apiis
 =&gt; ESC + ZZ (pour sauver)</code></pre>
-<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">sudo</span> service apache2 restart
-<span class="kw">vim</span> ~/.bashrc</code></pre>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">sudo</span> service apache2 restart
+<span class="ex">vim</span> ~/.bashrc</code></pre></div>
 <pre class="snip"><code>export APIIS_HOME=/home/popreport/production/apiis
 export PATH=$PATH:$APIIS_HOME/bin</code></pre>
-<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">sudo</span> su
-<span class="kw">vim</span> ~/.bashrc</code></pre>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">sudo</span> su
+<span class="ex">vim</span> ~/.bashrc</code></pre></div>
 <pre class="snip"><code>export APIIS_HOME=/home/popreport/production/apiis
 export PATH=$PATH:$APIIS_HOME/bin</code></pre>
-<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">sudo</span> vim /etc/sudoers</code></pre>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">sudo</span> vim /etc/sudoers</code></pre></div>
 <pre class="snip"><code>Defaults    env_keep +=&quot;APIIS_HOME&quot;</code></pre>
-<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">exit</span></code></pre>
-<pre class="sourceCode bash"><code class="sourceCode bash"><span class="co"># define project section in .apiisrc</span>
-<span class="kw">sudo</span> su
-<span class="kw">echo</span> <span class="st">&quot;[PROJECTS]&quot;</span> <span class="kw">&gt;</span>/var/www/.apiisrc
-<span class="kw">echo</span> <span class="st">'dummy = $APIIS_HOME/projects'</span> <span class="kw">&gt;&gt;</span>/var/www/.apiisrc
-<span class="kw">chown</span> www-data: /var/www/.apiisrc
-<span class="kw">exit</span></code></pre>
-<pre class="sourceCode bash"><code class="sourceCode bash"><span class="co"># create necessary username in pgsql</span>
-<span class="kw">createuser</span> -s -P apiis_admin <span class="co">#password postgres</span>
-<span class="kw">createuser</span> -s -P popreport <span class="co">#password pass</span>
-<span class="kw">createuser</span> -s -P heli <span class="co">#password pass</span>
-<span class="kw">exit</span></code></pre>
-<pre class="sourceCode bash"><code class="sourceCode bash"><span class="co"># make needed files executable and change rights </span>
-<span class="kw">cd</span> /home/popreport/production/
-<span class="kw">sudo</span> chmod 777 -R apiis</code></pre>
-<pre class="sourceCode bash"><code class="sourceCode bash"><span class="co"># Change postgres authentication methods</span>
-<span class="kw">sudo</span> vim /etc/postgresql/9.3/main/pg_hba.conf</code></pre>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="bu">exit</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="co"># define project section in .apiisrc</span>
+<span class="fu">sudo</span> su
+<span class="bu">echo</span> <span class="st">&quot;[PROJECTS]&quot;</span> <span class="op">&gt;</span>/var/www/.apiisrc
+<span class="bu">echo</span> <span class="st">'dummy = $APIIS_HOME/projects'</span> <span class="op">&gt;&gt;</span>/var/www/.apiisrc
+<span class="fu">chown</span> www-data: /var/www/.apiisrc
+<span class="bu">exit</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="co"># create necessary username in pgsql</span>
+<span class="ex">createuser</span> -s -P apiis_admin <span class="co">#password postgres</span>
+<span class="ex">createuser</span> -s -P popreport <span class="co">#password pass</span>
+<span class="ex">createuser</span> -s -P heli <span class="co">#password pass</span>
+<span class="bu">exit</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="co"># make needed files executable and change rights </span>
+<span class="bu">cd</span> /home/popreport/production/
+<span class="fu">sudo</span> chmod 777 -R apiis</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="co"># Change postgres authentication methods</span>
+<span class="fu">sudo</span> vim /etc/postgresql/9.3/main/pg_hba.conf</code></pre></div>
 <pre class="snip"><code>local all all md5 (instead of peer)</code></pre>
-<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">sudo</span> service postgresql restart
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">sudo</span> service postgresql restart
 <span class="co"># configure the var/www/.pgpass that stores the database password. The PPP_ddddddddddddd is changed by the database name. </span>
-<span class="kw">sudo</span> chmod 0600 /var/www/
-<span class="kw">cd</span> /var/www
-<span class="kw">sudo</span> vim .pgpass</code></pre>
+<span class="fu">sudo</span> chmod 0600 /var/www/
+<span class="bu">cd</span> /var/www
+<span class="fu">sudo</span> vim .pgpass</code></pre></div>
 <pre class="snip"><code>Add:
 *:*:PPP_ddddddddddddd:apiis_admin:PWD_for_apiis_admin_user (supposedly postgres)
 *:*:template1:apiis_admin:PWD_for_apiis_admin_user (supposedly postgres)
 *:*:GenMon_CH:geome_admin_admin:PWD_for_geom_admin_user (supposedly geome)
 *:*:template1:geome_admin_admin:PWD_for_geom_admin_user (supposedly geome)</code></pre>
-<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">sudo</span> chown www-data: .pgpass
-<span class="kw">sudo</span> chmod 0600 .pgpass
-<span class="kw">sudo</span> service postgresql restart
-<span class="co"># in php code, need to check that the code ran succefully</span></code></pre>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">sudo</span> chown www-data: .pgpass
+<span class="fu">sudo</span> chmod 0600 .pgpass
+<span class="fu">sudo</span> service postgresql restart
+<span class="co"># in php code, need to check that the code ran succefully</span></code></pre></div>
 </body>
 </html>
